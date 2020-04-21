@@ -7,7 +7,7 @@ using namespace std;
 // Esta biblioteca tem como objetivo criar as telas para cada uma das funcoes
 // presentes na lib_do_sucesso.h
 //===============================================================================
-void txt_Desenha_Retangulo()
+void vitor::txt::txt_Desenha_Retangulo()
 {
     int m,n;
     char c_int, c_ext;
@@ -23,7 +23,7 @@ void txt_Desenha_Retangulo()
     desenha_Retangulo(m,n,c_ext,c_int);
     return;
 }
-void txt_Volume_Esfera()
+void vitor::txt::txt_Volume_Esfera()
 {
     double Raio;
     cout << "Raio = ";
@@ -31,7 +31,7 @@ void txt_Volume_Esfera()
     cout << "Volume = " << fixed << setprecision(3) << volume_Esfera(Raio) << endl;
     return;
 }
-void txt_Fat_x()
+void vitor::txt::txt_Fat_x()
 {
     int n;
     cout << "Desejo calcular o fatorial de:  ";
@@ -39,7 +39,7 @@ void txt_Fat_x()
     cout << "Fatorial de " << n << " = " << fat_x(n) << endl;
     return;
 }
-void txt_Fib()
+void vitor::txt::txt_Fib()
 {
     int numero;
     cout << "Desejo saber o seguinte termo de Fibonacci: ";
@@ -47,7 +47,7 @@ void txt_Fib()
     cout << "Reposta = " << fib(numero) << endl;
     return;
 }
-void txt_Regular()
+void vitor::txt::txt_Regular()
 {
     int n;
     cout << "Desejo saber se o seguinte numero eh regular: ";
@@ -55,7 +55,7 @@ void txt_Regular()
     cout << "Resposta = " << regular(n) << endl;
     return;
 }
-void txt_Combinacoes()
+void vitor::txt::txt_Combinacoes()
 {
     int n, p;
     cout << "Calculo das combinacoes de N tomadas P a P, sendo:\n"
@@ -66,7 +66,7 @@ void txt_Combinacoes()
     cout << "Combinacoes de N, P a P = " << fat_x(n)/(fat_x(p)*fat_x(n-p)) << endl;
     return;
 }
-void txt_Palindromo()
+void vitor::txt::txt_Palindromo()
 {
     string p;
     cout << "Desejo saber se a seguinte string eh um palindromo: ";
@@ -74,7 +74,7 @@ void txt_Palindromo()
     cout << "Palindromo?\t" << palindromo(p, p.length()) << endl;
     return;
 }
-void txt_To_Lower_Case()
+void vitor::txt::txt_To_Lower_Case()
 {
     string s;
     cout << "Desejo transformar a seguinte string em letras minusculas: ";
@@ -83,7 +83,7 @@ void txt_To_Lower_Case()
     cout << "\nResultado = " << s << endl;
     return;
 }
-void txt_To_Upper_Case()
+void vitor::txt::txt_To_Upper_Case()
 {
     string s;
     cout << "Desejo transformar a seguinte string em letras maiusculas: ";
@@ -92,7 +92,7 @@ void txt_To_Upper_Case()
     cout << "\nResultado = " << s << endl;
     return;
 }
-void txt_Caixa_Com_Texto_Centralizado()
+void vitor::txt::txt_Caixa_Com_Texto_Centralizado()
 {
     int n;
     char l;
@@ -108,7 +108,7 @@ void txt_Caixa_Com_Texto_Centralizado()
     caixa_Com_Texto_Centralizado(x,n,l);
     return;
 }
-void txt_Ordena_Tres()
+void vitor::txt::txt_Ordena_Tres()
 {
     int a,b,c;
     cout << "Desejo ordenar tres numeros em ordem crescente: ";
@@ -116,7 +116,7 @@ void txt_Ordena_Tres()
     ordena_Tres(a,b,c);
     cout << "\nEm ordem crescente: " << a << ", " << b << ", " << c << ".\n";
 }
-void txt_Tamanho_String()
+void vitor::txt::txt_Tamanho_String()
 {
     cout << "Desejo saber o tamanho da seguinte string: ";
     char S[100];
@@ -124,7 +124,7 @@ void txt_Tamanho_String()
     cin.getline(S,100);
     cout << "Tamanho da string: " << tamanho_String(S) << endl;
 }
-void txt_Conta_String()
+void vitor::txt::txt_Conta_String()
 {
     char S1[100], S2[100];
     cout << "Desejo realizar a comparacao lexicografica entre duas strings: \n"
@@ -136,14 +136,14 @@ void txt_Conta_String()
     cout << "\nResposta: " << conta_String(S1,S2) << endl;
     return;
 }
-void txt_String_To_Int()
+void vitor::txt::txt_String_To_Int()
 {
     string S;
     cout << "Desejo converter a seguinte string para inteiro: ";
     cin >> S;
     cout << "\nInteiro resultante: " << string_to_Int(S) << endl;
 }
-void txt_No_Spaces()
+void vitor::txt::txt_No_Spaces()
 {
     string S;
     cout << "Desejo remover os espacos da seguinte string: ";
@@ -152,23 +152,23 @@ void txt_No_Spaces()
     S = no_Spaces(S);
     cout << "\nString Alterada: " << S << endl;
 }
-void txt_Sub_Strings()
+void vitor::txt::txt_Sub_Strings()
 {
     char sep;
     string S;
-    int qntd = 0;
+    int qntd;
     cout << "Desejo separar a seguinte string:\nString: ";
     cin.ignore();
     getline(cin,S);
     cout << "Caracter de separacao: ";
     cin >> sep;
     string *subs = sub_Strings(S,sep,qntd);
+    cout << "Quantidade de substrings: " << qntd << endl;
     for (int i=0;i<qntd;i++)
         cout << '[' << i << "] = " << subs[i] << endl;
     delete subs;
 }
-
-void txt_Sub_Check()
+void vitor::txt::txt_Sub_Check()
 {
     string S1,S2;
     cout << "Desejo saber se existe ocorrencia de S2 em S1:\n"
@@ -183,7 +183,7 @@ void txt_Sub_Check()
     else
         cout << "Posicao inicial de ocorrencia: " << posicao << endl;
 }
-void txt_Soma_Gigante()
+void vitor::txt::txt_Soma_Gigante()
 {
     char S1[100],S2[100];
     char *p;
@@ -194,14 +194,10 @@ void txt_Soma_Gigante()
     cout << "Valor 2: ";
     cin.getline(S2,100);
     p = soma_Gigante(S1, S2);
-    cout << "Soma dos numeros: ";
-    int i = 0;
-    for(; p[i]!='\0'; i++);
-    for(; i>=0; i--)
-        cout << p[i];
-    cout << endl;
+    cout << "Soma dos numeros: " << p << "\n\n";
+    delete p;
 }
-void txt_find_Greater_and_Smaller()
+void vitor::txt::txt_find_Greater_and_Smaller()
 {
     int Tam, smallIndex = 0, bigIndex = 0;
     cout << "Desejo determinar o maior e o menor valor de um vetor de tamanho: ";
@@ -214,7 +210,7 @@ void txt_find_Greater_and_Smaller()
          << "O menor valor eh " << p[smallIndex] << " e esta na posicao [" << smallIndex << "]\n";
     delete p;
 }
-void txt_Soma_Matriz()
+void vitor::txt::txt_Soma_Matriz()
 {
     int LA, CA, LB, CB;
     int **A, **B, **Soma;
@@ -240,9 +236,5 @@ void txt_Soma_Matriz()
     print_Matrix(Soma,LA,CA);
     delete_Matrix(Soma,LA);
 }
-
-
-
-
-
-
+//=================================================================================================
+// THE END
