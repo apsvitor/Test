@@ -1,24 +1,26 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <cmath>
 #include "lib_do_sucesso.h"
 #include "auxiliar_do_sucesso.h"
 #define PI 3.1415
+#define INF 10e7
 using namespace std;
 void printOptions()
 {
-    cout << "Bem vindo ao Programa do Sucesso!\n"
-         << "Escolha uma dentre as opcoes do menu a seguir:\n"
-         << "[01] Lista 1A - Questao 5\t\t[11] Lista 2A - Questao 1\n"
-         << "[02] Lista 1B - Questao 2\t\t[12] Lista 2A - Questao 3\n"
-         << "[03] Lista 1B - Questao 6\t\t[13] Lista 2A - Questao 4\n"
-         << "[04] Lista 1B - Questao 8\t\t[14] Lista 2B - Questao 1\n"
-         << "[05] Lista 1B - Questao 9\t\t[15] Lista 2B - Questao 3\n"
-         << "[06] Lista 1B - Questao 10\t\t[16] Lista 2B - Questao 4\n"
-         << "[07] Lista 1C - Questao 3\t\t[17] Lista 2B - Questao 5\n"
-         << "[08] Lista 1C - Questao 5\t\t[18] Lista 2B - Questao 6\n"
-         << "[09] Lista 1C - Questao 6\t\t[19] Lista 2C - Questao 4\n"
-         << "[10] Lista 1C - Questao 7\t\t[20] Lista 2D - Questao 6\n"
+    cout << "Bem vindo ao Programa do Sucesso!\n\n"
+         << "Escolha uma dentre as opcoes do menu a seguir:\n\n"
+         << left << setw(40) << "[01] 1A5  Desenha Retangulo "       << "[11] 2A1 Ordenar tres numeros\n"
+         << left << setw(40) << "[02] 1B2  Volume Esfera"            << "[12] 2A3 Tamanho string\n"
+         << left << setw(40) << "[03] 1B6  Fatorial"                 << "[13] 2A4 Compara string\n"
+         << left << setw(40) << "[04] 1B8  Fibonacci"                << "[14] 2B1 Converte string para int\n"
+         << left << setw(40) << "[05] 1B9  Numero Regular"           << "[15] 2B3 Remove espacos em branco inicio e fim\n"
+         << left << setw(40) << "[06] 1B10 Combinacoes"              << "[16] 2B4 Quebrar string\n"
+         << left << setw(40) << "[07] 1C3  Palindromo"               << "[17] 2B5 Buscar na string\n"
+         << left << setw(40) << "[08] 1C5  Converte para minusculas" << "[18] 2B6 Soma numeros gigantes\n"
+         << left << setw(40) << "[09] 1C6  Converte para maiusculas" << "[19] 2C5 Maior e menor do vetor\n"
+         << left << setw(40) << "[10] 1C7  Centralizar texto"        << "[20] 2D6 Soma matriz\n"
          << "\n\n\tOpcao de teste: ";
 }
 //=======================================================================
@@ -179,7 +181,6 @@ void troca(int &x, int &y)
     x = y;
     y = aux;
 }
-
 void ordena_Tres(int &a, int &b, int &c)
 {
     if  (a > b)
@@ -395,7 +396,7 @@ char* soma_Gigante(char s1[], char s2[])
     return resp;
 }
 //=======================================================================
-//19) Lista 2C - 4
+//19) Lista 2C - 5
 int* create_Array(int Tam)
 {
     int* p = new int[Tam];
@@ -414,6 +415,23 @@ void print_Array(int Tam, int *p)
 {
     for (int i=0;i<Tam;i++)
         cout << '[' << i << "] = " << p[i] << endl;
+}
+void find_Greater_and_Smaller(int* p, int Tam, int& smallIndex, int& bigIndex)
+{
+    int small = INF, big = 0;
+    for (int i=0;i<Tam;i++)
+    {
+        if  (p[i] < small)
+        {
+            small = p[i];
+            smallIndex = i;
+        }
+        if  (p[i] > big)
+        {
+            big = p[i];
+            bigIndex = i;
+        }
+    }
 }
 //=======================================================================
 //20) Lista 2D - 6

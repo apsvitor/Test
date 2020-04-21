@@ -71,7 +71,7 @@ int main()
                 txt_Soma_Gigante();
                 break;
             case 19:
-                txt_Dinamic_Array();
+                txt_find_Greater_and_Smaller();
                 break;
             case 20:
                 txt_Soma_Matriz();

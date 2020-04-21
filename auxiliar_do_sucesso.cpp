@@ -201,16 +201,17 @@ void txt_Soma_Gigante()
         cout << p[i];
     cout << endl;
 }
-void txt_Dinamic_Array()
+void txt_find_Greater_and_Smaller()
 {
-    int Tam;
-    cout << "Desejo criar dinamicamente, ler e desalocar um vetor de tamanho: ";
+    int Tam, smallIndex = 0, bigIndex = 0;
+    cout << "Desejo determinar o maior e o menor valor de um vetor de tamanho: ";
     cin >> Tam;
     int* p;
-    cout << "Entre com os valores a serem atribuidos: ";
+    cout << "\nLeitura do vetor: ";
     p = read_Array(Tam,p);
-    cout << "O Vetor criado foi:\n";
-    print_Array(Tam,p);
+    find_Greater_and_Smaller(p,Tam,smallIndex,bigIndex);
+    cout << "\nO maior valor eh " << p[bigIndex] << " e esta na posicao [" << bigIndex << "]\n\n"
+         << "O menor valor eh " << p[smallIndex] << " e esta na posicao [" << smallIndex << "]\n";
     delete p;
 }
 void txt_Soma_Matriz()

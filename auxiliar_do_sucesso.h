@@ -19,7 +19,7 @@ void txt_No_Spaces();
 void txt_Sub_Strings();
 void txt_Sub_Check();
 void txt_Soma_Gigante();
-void txt_Dinamic_Array();
+void txt_find_Greater_and_Smaller();
 void txt_Soma_Matriz();
 
 #endif // AUXILIAR_DO_SUCESSO_H

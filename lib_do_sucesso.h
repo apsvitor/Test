@@ -25,6 +25,7 @@ char* soma_Gigante(char s1[], char s2[]);
 int* create_Array(int Tam);
 int* read_Array(int Tam, int *p);
 void print_Array(int Tam, int *p);
+void find_Greater_and_Smaller(int* p, int Tam, int& smallIndex, int& bigIndex);
 int **create_Matrix (int l, int c);
 void delete_Matrix (int**m, int l);
 int** read_Matrix (int **m,int l, int c);
