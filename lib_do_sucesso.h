@@ -8,7 +8,7 @@ void desenha_Retangulo(int m, int n, char c_ext, char c_int);
 double volume_Esfera(double r);
 int fat_x(int n);
 int fib(int n);
-int regular( int n);
+int regular(int n);
 bool palindromo(string s, int tam);
 void to_Lower_Case(string &x, int tam);
 void to_Upper_Case(string &x, int tam);

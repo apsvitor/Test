@@ -289,6 +289,7 @@ string no_Spaces(string S)
 //16) Lista 2B - 4
 string* sub_Strings(string S, char C, int &qntd)
 {
+    qntd = 0;
     string temp = "";
     for (unsigned int i=0;i<S.size();i++)
     {
@@ -300,7 +301,6 @@ string* sub_Strings(string S, char C, int &qntd)
                 i++;
         }
     }
-    cout << qntd << endl;
     string* aux = new string[qntd];
     int contString = 0;
     for (unsigned int i=0;i<S.size();i++)
@@ -317,11 +317,13 @@ string* sub_Strings(string S, char C, int &qntd)
         else
             temp += S[i];
     }
-
+    if  (temp.size())
+        aux[qntd-1] = temp;
     return aux;
 }
 //=======================================================================
 //17) Lista 2B - 5
+// funcao retorna a posicao inicial em S1 onde ocorre S2 ou retorna -1 se nao encontrar
 int sub_Check(string S1, string S2)
 {
     int pos = -1;
@@ -339,7 +341,7 @@ int sub_Check(string S1, string S2)
 //18) Lista 2B - 6
 char* soma_Gigante(char s1[], char s2[])
 {
-    static char resp[101];
+    char *resp = new char[101];
     char sobe1 = '0';
     int tam1 = 0, tam2 = 0, i = 0;
     for (; s1[tam1]!='\0'; tam1++);
@@ -390,9 +392,18 @@ char* soma_Gigante(char s1[], char s2[])
         }
     }
     if  (sobe1 == '1')
+    {
         resp[i] = '1';
-    else
+        i++;
+    }
         resp[i] = '\0';
+    char aux;
+    for (int j=0;j<i/2;j++)
+    {
+        aux = resp[j];
+        resp[j] = resp[i-1-j];
+        resp[i-1-j] = aux;
+    }
     return resp;
 }
 //=======================================================================
